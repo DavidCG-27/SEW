@@ -14,7 +14,6 @@ class Prediccion {
                 $("body > main > aside > ul").append(li);
             });
 
-            // Ejecutar el callback si existe
             if (callback) callback();
         });
     }
@@ -37,7 +36,6 @@ class Prediccion {
             $("body > main > section > ul").append(li);
         }
 
-        // Ejecutar el callback si existe
         if (callback) callback();
     }
 
@@ -46,15 +44,13 @@ class Prediccion {
         let canvas1 = canvas.getContext("2d");
         canvas1.font = "italic 3em sans-serif";
         canvas1.strokeStyle = "#126263";
-        canvas1.strokeText("Predicción de puestos", 500, 100);
+        canvas1.strokeText("Predicción de puestos", 0, 80);
     }
 
     aniadirListeners() {
-        // Ejecutar cuando el DOM esté cargado
+        //Ejecutar cuando el DOM este cargado
         const pilotos = document.querySelectorAll("aside ul li[draggable='true']");
         const dropzones = document.querySelectorAll("section ul li[data-dropzone]");
-        console.log(pilotos);
-        console.log(dropzones);
 
         let draggedElement = null;
 
@@ -118,6 +114,22 @@ class Prediccion {
             link.download = "posiciones.json";
             link.click();
         });
+
+        document.querySelector("body>header+p+h3+nav+canvas+main+button+button").addEventListener("click", () => {
+            p.showAyuda();
+        });
+    }
+
+    showAyuda(){
+        let p = document.querySelector("body>header+p+h3+nav+canvas+main+button+button+script+p");
+        if(p)
+            p.remove();
+        else{
+            let ayuda = document.createElement("p");
+            ayuda.textContent = "La aplicación consiste en predecir la clasificación de una carrera. Se arrastrará cada piloto a su casilla correspondiente y luego se guardará en formato JSON.";
+            let body = document.querySelector("body");
+            body.appendChild(ayuda);
+        }
     }
 }
 

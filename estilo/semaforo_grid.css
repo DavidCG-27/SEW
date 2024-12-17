@@ -180,6 +180,7 @@ form:empty {
     display: none;
 }
 
+/* Especifidad 001 */
 section {
     grid-column: 1 / -1;
 

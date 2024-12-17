@@ -10,6 +10,27 @@ class Record{
         $this->user="DBUSER2024";
         $this->pass="DBPSWD2024";
         $this->dbname="records";
+        $this->inicializarBD();
+    }
+
+    private function inicializarBD() {
+    $db = new mysqli($this->server, $this->user, $this->pass);
+
+    $query = "CREATE DATABASE IF NOT EXISTS `" . $this->dbname . "`";
+    $db->query($query);
+    $db->select_db($this->dbname);
+
+    $tableQuery = "CREATE TABLE IF NOT EXISTS `registro` (
+        `id` INT AUTO_INCREMENT PRIMARY KEY,
+        `nombre` VARCHAR(50) NOT NULL,
+        `apellidos` VARCHAR(50) NOT NULL,
+        `nivel` VARCHAR(50) NOT NULL,
+        `tiempo` FLOAT NOT NULL
+    )";
+
+    $db->query($tableQuery);
+
+    $db->close();
     }
 
     function mostrar_10_mejores(){
@@ -30,11 +51,6 @@ class Record{
 $record = new Record();
 $db = new mysqli($record->server, $record->user, $record->pass, $record->dbname);
 
-if ($db->connect_errno){
-    echo "Error de conexión: " . $db->connect_error;
-    exit();
-}
-
 $nombre = "";
 $apellidos = "";
 $nivel = "";
@@ -45,7 +61,6 @@ if (isset($_POST['submit'])) {
         $nombre = $_POST["nombre"];
         $apellidos = $_POST["apellidos"];
         $nivel = $_POST["nivel"];
-        
         if (isset($_POST["tiempo"])) {
             $tiempo = (double)explode(" ", $_POST["tiempo"])[0];
         }
@@ -79,23 +94,24 @@ if (isset($_POST['submit'])) {
     <header>
         <h1><a href="index.html" title="Enlace a pagina de inicio">F1 Desktop</a></h1>
         <nav>
-            <a href="index.html" title="Pagina de Inicio ">Inicio</a>
+            <a href="index.html" title="Página de Inicio ">Inicio</a>
             <a href="piloto.html" title="Piloto ">Piloto</a>
-            <a href="noticias.html" title="Pagina de Noticias ">Noticias</a>
-            <a href="calendario.html" title="Pagina del Calendario ">Calendario</a>
-            <a href="meteorologia.html" title="Pagina de Meteorología ">Meteorología</a>
-            <a href="circuito.html" title="Pagina de los circuitos ">Circuito</a>
-            <a href="viajes.html" title="Pagina de Viajes ">Viajes</a>
-            <a href="juegos.html" class="active" title="Pagina de Juegos ">Juegos</a>
+            <a href="noticias.html" title="Página de Noticias ">Noticias</a>
+            <a href="calendario.html" title="Página del Calendario ">Calendario</a>
+            <a href="meteorologia.html" title="Página de Meteorología ">Meteorología</a>
+            <a href="circuito.html" title="Página de los circuitos ">Circuito</a>
+            <a href="viajes.php" title="Página de Viajes ">Viajes</a>
+            <a href="juegos.html" class="active" title="Página de Juegos ">Juegos</a>
         </nav>
     </header>
-    <p>Estás en: <a href="index.html" title="Pagina de Inicio">Inicio</a> >> <a href="juegos.html" title="Pagina de Juegos">Juegos</a> >> Semáforo</p>
+    <p>Estás en: <a href="index.html" title="Página de Inicio">Inicio</a> >> <a href="juegos.html" title="Página de Juegos">Juegos</a> >> Semáforo</p>
     <h3>Menú de juegos disponibles</h3>
     <nav>
         <ol>
             <li><a href="memoria.html" title="Memoria">Memoria</a></li>
             <li><a href="semaforo.php" title="Semáforo">Semáforo</a></li>
             <li><a href="api.html" title="Predicción de puestos (Ejercicio API libre JS)">Predicción de puestos</a></li>
+            <li><a href="php/simulador.php" title="Simulador de carreras (Ejercicio libre PHP)">Simulador de carreras</a></li>
         </ol>
     </nav>
     <main>

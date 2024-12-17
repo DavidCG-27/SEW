@@ -26,13 +26,15 @@ body {
 /* Especifidad 001 */
 header {
     font-family: "Trebuchet MS", Tahoma, sans-serif;
-    background-color: #98D7C2; /* WARNING DE HERENCIA: Color es heredado */
+    background-color: #98D7C2;
+    /* WARNING DE HERENCIA: Color es heredado */
     padding: 2em;
 }
 
 /* Especifidad 001 */
 h1 {
-    background-color: #126263; /* WARNING DE HERENCIA: Color es heredado */
+    background-color: #126263;
+    /* WARNING DE HERENCIA: Color es heredado */
     padding: 1em;
     font-size: 3em;
 }
@@ -45,14 +47,16 @@ nav {
 
 /* Especifidad 002 */
 nav a {
-    color: #000000; /* WARNING DE HERENCIA: Background-color es heredado */ 
+    color: #000000;
+    /* WARNING DE HERENCIA: Background-color es heredado */
     text-decoration: none;
     margin-left: 0.30em;
 }
 
 /* Especifidad 012 */
 nav a.active {
-    color: #4635e2; /* WARNING DE HERENCIA: Background-color es heredado */
+    color: #4635e2;
+    /* WARNING DE HERENCIA: Background-color es heredado */
     border-radius: 0.75em;
     font-weight: bold;
 }
@@ -60,14 +64,16 @@ nav a.active {
 /* Especifidad 002 */
 h1 a {
     text-decoration: none;
-    color: #fff; /* WARNING DE HERENCIA: Background-color es heredado */
+    color: #fff;
+    /* WARNING DE HERENCIA: Background-color es heredado */
 }
 
 /* Especifidad 001 */
 h2 {
     font-family: 'Trebuchet MS', sans-serif;
     font-size: 2em;
-    color: #126263; /* WARNING DE HERENCIA: Background-color es heredado */
+    color: #126263;
+    /* WARNING DE HERENCIA: Background-color es heredado */
     text-align: center;
     letter-spacing: 0.05em;
     margin: 1em 0;
@@ -79,7 +85,8 @@ h2 {
 h3 {
     font-family: 'Trebuchet MS', sans-serif;
     font-size: 1.5em;
-    color: #126263; /* WARNING DE HERENCIA: Background-color es heredado */
+    color: #126263;
+    /* WARNING DE HERENCIA: Background-color es heredado */
     text-align: left;
     letter-spacing: 0.03em;
     margin: 0.8em 0;
@@ -90,7 +97,8 @@ h3 {
 /* Especifidad 001 */
 h4 {
     font-size: 1.1em;
-    color: #126263; /* WARNING DE HERENCIA: Background-color es heredado */
+    color: #126263;
+    /* WARNING DE HERENCIA: Background-color es heredado */
     text-align: left;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
@@ -99,15 +107,18 @@ h4 {
     font-family: 'Arial', sans-serif;
 }
 
-/* Especifidad 001 */
+/* Especifidad 001 ambos */
 p {
-    font-family: 'Trebuchet MS', sans-serif;
-    font-size: 1em;
-    color: #000000; /* WARNING DE HERENCIA: Background-color es heredado */
-    line-height: 1.6;
-    text-align: justify;
-    margin: 0.8em 0;
+    font-family: Arial, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: #000;
+    background-color: transparent;
+    margin: 0 0 1em 0;
+    max-width: 75ch;
+    text-align: left;
 }
+
 
 /* Especifidad 012 */
 body>p:first-of-type {
@@ -145,7 +156,8 @@ table {
     width: 100%;
     height: auto;
     border-collapse: collapse;
-    background-color: #fff; /* WARNING DE HERENCIA: Color es heredado */
+    background-color: #fff;
+    /* WARNING DE HERENCIA: Color es heredado */
 }
 
 /* 
@@ -199,7 +211,8 @@ body>header+p+h3+nav+canvas+main>section:has(h3)>ul>li,
 body>header+p+h3+nav+canvas+main>aside:has(h3)>ul>li {
     margin: 0.7em;
     padding: 0.3em 1em;
-    background-color: #98D7C2; /* WARNING DE HERENCIA: Color es heredado */
+    background-color: #98D7C2;
+    /* WARNING DE HERENCIA: Color es heredado */
     cursor: grab;
     list-style: none;
 }
@@ -234,7 +247,21 @@ body>header+p+h3+nav+canvas+main {
 /* Especifidad 008 */
 body>header+p+h3+nav+canvas+main+button {
     font-size: 1.1em;
-    color: #126263; /* WARNING DE HERENCIA: Background-color es heredado */
+    color: #126263;
+    /* WARNING DE HERENCIA: Background-color es heredado */
+    text-align: left;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05rem;
+    line-height: 1.3;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Especifidad 009 */
+body>header+p+h3+nav+canvas+main+button+button {
+    font-size: 1.1em;
+    color: #126263;
+    /* WARNING DE HERENCIA: Background-color es heredado */
     text-align: left;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
@@ -247,4 +274,140 @@ body>header+p+h3+nav+canvas+main+button {
 img {
     width: 100%;
     height: 100%;
+}
+
+/* Especifidad 001 */
+form {
+    gap: 1em;
+    padding: 2em;
+    border-radius: 0.7em;
+    background-color: #98D7C2;
+    /* WARNING DE HERENCIA: Color es heredado */
+    box-shadow: 0 0.3em 0.5em rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin: 1em auto;
+}
+
+/* Especifidad 002 */
+form label {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    /* WARNING DE HERENCIA: Background-color es heredado */
+    margin-bottom: 0.5em;
+}
+
+/* Especifidad 002 */
+form input {
+    padding: 0.8em;
+    border: 0.3em solid #ccc;
+    border-radius: 0.5em;
+    font-size: 1em;
+    color: #555;
+    /* WARNING DE HERENCIA: Background-color es heredado */
+    transition: border-color 0.3s ease;
+}
+
+/* Especifidad 012 */
+form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Especifidad 002 */
+form p {
+    font-size: 1.1em;
+    color: #555;
+    /* WARNING DE HERENCIA: Background-color es heredado */
+    margin: 0.5em 0;
+}
+
+/* Especifidad 002 */
+form>label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+/* Especifidad 005 */
+body>header+p+h2+article {
+    width: 100%;
+    max-width: 100vh;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1em;
+}
+
+/* Especifidad 006 */
+body>header+p+h2+article>img {
+    width: 100%;
+    max-width: 100vh;
+    height: 60vh;
+    position: absolute;
+    transition: all 0.5s;
+    object-fit: cover;
+    border-radius: 0.5em;
+}
+
+/* Especifidad 001 */
+body>header+p+h2+article>button {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
+    border: none;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    background-color: #fff;
+    /* WARNING DE HERENCIA: Color es heredado */
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Especifidad 016 */
+body>header+p+h2+article>button:active {
+    transform: scale(1.1);
+}
+
+/* Especifidad 016 */
+body>header+p+h2+article>button:nth-of-type(2) {
+    top: 50%;
+    left: 2%;
+}
+
+/* Especifidad 016 */
+body>header+p+h2+article>button:nth-of-type(1) {
+    top: 50%;
+    right: 2%;
+}
+
+
+/* Especifidad 008 */
+body>header+p+h2+article+article>h3+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #126263;
+    /* WARNING DE HERENCIA: Background-color es heredado */
+    background: linear-gradient(135deg, #98D7C2, #BEE3DD);
+    border: 0.2rem solid #98D7C2;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 90%;
+    margin: 1rem auto;
+}
+
+
+/* Especifidad 018 */
+body>header+p+h2+article+article>h3+p:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0.7rem 1.5rem rgba(0, 0, 0, 0.15);
 }

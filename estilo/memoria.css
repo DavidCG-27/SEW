@@ -1,12 +1,27 @@
 /* David Covián Gómez UO295168*/
 
-/* Especifidad 003 */
+/* Especifidad 001 */
+main {
+    justify-content: center;
+    display: flex;
+}
+
+/* Especifidad 002 */
+main+button {
+    color: black;
+    background: #1e9698;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin:0.5em;
+}
+
+/* Especifidad 002 */
 main > section {
     display: flex;                   
     flex-wrap: wrap;
     width: 70vw;            
     justify-content: center;
-    gap: 0.5em;         
+    gap: 2em;         
 }
 
 /* Especifidad 003 */
@@ -14,7 +29,9 @@ main > section > h3 {
     flex-basis: 100%;
     text-align: center; 
     margin: 0;          
-    font-size: 2em;                 
+    font-size: 2em;
+    justify-content: center;       
+    border-left: none;          
 }
 
 /* Especifidad 003 */
@@ -59,8 +76,6 @@ main > section > article > img {
     color: #000000;
 }
 
-
-
 /* Especifidad 004 */
 main > section > article > h3 {
     display: flex;
@@ -69,11 +84,52 @@ main > section > article > h3 {
     justify-content: center;
 }
 
+@media (max-width: 700px) {
+    /* Especifidad 002 */
+    main > section {
+        display: flex;   /* WARNING DE MEDIAQUERIE: Redefinición de display */                
+        flex-wrap: wrap; /* WARNING DE MEDIAQUERIE: Redefinición de flex-wrap */
+        width: 70vw; /* WARNING DE MEDIAQUERIE: Redefinición de width */
+        justify-content: center; /* WARNING DE MEDIAQUERIE: Redefinición de justify-content */
+        gap: 1em; /* WARNING DE MEDIAQUERIE: Redefinición de gap */
+    }
+}
+
+@media (max-width: 550px) {
+    /* Especifidad 003 */
+    main > section > article {
+        height:11em; /* WARNING DE MEDIAQUERIE: Redefinición de height */
+    }
+    /* Especifidad 004 */
+    main > section > article > h3 {
+        font-size: 0.8em; /* WARNING DE MEDIAQUERIE: Redefinición de font-size */
+    }
+    /* Especifidad 002 */
+    main > section {
+        display: flex; /* WARNING DE MEDIAQUERIE: Redefinición de display */             
+        flex-wrap: wrap; /* WARNING DE MEDIAQUERIE: Redefinición de flex-wrap */
+        width: 70vw;     /* WARNING DE MEDIAQUERIE: Redefinición de width */       
+        justify-content: center; /* WARNING DE MEDIAQUERIE: Redefinición de justify-content */
+        gap: 1em; /* WARNING DE MEDIAQUERIE: Redefinición de gap */
+    }
+}
+
+@media (max-width: 375px) {
+    /* Especifidad 003 */
+    main > section > article {
+        height: 8em; /* WARNING DE MEDIAQUERIE: Redefinición de height */
+    }
+    /* Especifidad 004 */
+    main > section > article > h3 {
+        font-size: 0.6em; /* WARNING DE MEDIAQUERIE: Redefinición de font-size */
+    }
+}
+
 /* Especifidad 002 */
 button+p {
     font-size: 1.125rem; 
     line-height: 1.6;
-    color: #333;
+    color: black;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 1em; 
     border-radius: 0.5em; 
@@ -81,6 +137,4 @@ button+p {
     max-width: 60ch; 
     margin: 1em auto;
 }
-
-
 

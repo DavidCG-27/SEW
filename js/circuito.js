@@ -26,7 +26,7 @@ function leerArchivoTexto(files) {
 }
 
 function leerKml() {
-    var inputElement = document.querySelector("body > section:nth-of-type(3) > input");
+    var inputElement = document.querySelector("body > section:nth-of-type(3) > label > input");
     if (inputElement.files && inputElement.files.length > 0) {
         var file = inputElement.files[0];
         var reader = new FileReader();
@@ -71,7 +71,7 @@ function leerKml() {
 
 
 function leerSVG() {
-    var inputElement = document.querySelector("body > section:nth-of-type(2) > input");
+    var inputElement = document.querySelector("body > section:nth-of-type(2) > label > input");
     if (inputElement.files && inputElement.files.length > 0) {
         var imagen = inputElement.files[0];
 

@@ -1,0 +1,72 @@
+/* David Covián Gómez UO295168*/
+
+/* Especifidad 001 */
+form {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    background-color: #f9f9f9; /* WARNING DE HERENCIA: Color es heredado */
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1.5rem; 
+}
+
+/* Especifidad 011 */
+form:nth-of-type(-n+3) {
+    background-color: #e6f7ff; /* WARNING DE HERENCIA: Color es heredado */
+}
+
+/* Especifidad 021 */
+form:nth-of-type(n+4):nth-of-type(-n+5) {
+    background-color: #fff7e6; /* WARNING DE HERENCIA: Color es heredado */
+}
+
+/* Especifidad 011 */
+form:nth-of-type(6) {
+    background-color: #f6e6ff; /* WARNING DE HERENCIA: Color es heredado */
+}
+
+/* 
+    Especifidad 011     
+    Especifidad 021
+    Especifidad 011  
+    (respectivamente)
+*/
+form:nth-of-type(-n+3),
+form:nth-of-type(n+4):nth-of-type(-n+5),
+form:nth-of-type(6) {
+    display: inline-block; 
+    vertical-align: top; 
+    width: 30%; 
+    margin-right: 1.5%; 
+}
+
+@media (max-width: 768px) {
+    /* Especifidad 011 */
+    form {
+        display: block;
+        width: 100%; /* WARNING DE MEDIAQUERIE: Redefinición de width */
+        margin-right: 0;
+    }
+}
+
+/* Especifidad 002 */
+form+p {
+    font-size: 1.1rem; 
+    line-height: 1.8; 
+    color: #126263; /* WARNING DE HERENCIA: Background-color es heredado */
+    background: linear-gradient(135deg, #98D7C2, #BEE3DD);
+    border: 0.2rem solid #98D7C2; 
+    border-radius: 1rem; 
+    padding: 1rem 1.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    max-width: 90%; 
+    margin: 1rem auto; 
+}
+
+/* Especifidad 001 */
+label{
+    padding-top: 1em;
+}

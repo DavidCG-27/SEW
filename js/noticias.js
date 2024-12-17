@@ -5,9 +5,14 @@ class Noticias {
             return;
         }
 
-        document.querySelector("main > button").addEventListener("click", () => this.addNoticiaManual());
+        document.querySelector("form > button").addEventListener("click", (event) => {
+            event.preventDefault();
+            this.addNoticiaManual();
+        });
 
-        document.querySelector("p > label > input").addEventListener("change", (event) => this.readInputFile(event.target.files));
+        document.querySelector("h3+p > label > input").addEventListener("change", (event) => {
+            this.readInputFile(event.target.files);
+        });
     }
 
     readInputFile(files) {
@@ -47,20 +52,23 @@ class Noticias {
         autorElemento.textContent = `Autor: ${autor}`;
 
         article.appendChild(tituloElemento);
-        
         article.appendChild(contenidoElemento);
         article.appendChild(autorElemento);
 
         this.getImagenParaNoticia((imagenUrl) => {
             let imagen = document.createElement("img");
             imagen.setAttribute("src", imagenUrl);
-            imagen.setAttribute("alt", "Imagen generica de F1")
+            imagen.setAttribute("alt", "Imagen generica de F1");
             article.insertBefore(imagen, article.querySelector("p:first-of-type"));
         });
+        
         let section = document.querySelector("section");
-        if(!section){
+        if (!section) {
             section = document.createElement("section");
-            document.querySelector("main").appendChild(section)
+            let h3 = document.createElement("h3");
+            h3.textContent = "Últimas noticias";
+            section.appendChild(h3);
+            document.querySelector("main").appendChild(section);
         }
         section.appendChild(article);
     }
@@ -79,21 +87,21 @@ class Noticias {
     }
 
     addNoticiaManual() {
-        let titulo = document.querySelector("main > label:first-of-type > input").value;
-        let contenido = document.querySelector("main > label:nth-of-type(2) > input").value;
-        let autor = document.querySelector("main > label:nth-of-type(3) > input").value;
+        let form = document.querySelector("form");
+        let titulo = form.querySelector("input[name='titulo']").value;
+        let contenido = form.querySelector("input[name='contenido']").value;
+        let autor = form.querySelector("input[name='autor']").value;
 
         if (titulo && contenido && autor) {
             this.createNoticiaElement(titulo, contenido, autor);
             
-            document.querySelector("main > label:first-of-type > input").value = "";
-            document.querySelector("main > label:nth-of-type(2) > input").value = "";
-            document.querySelector("main > label:nth-of-type(3) > input").value = "";
+            form.querySelector("input[name='titulo']").value = "";
+            form.querySelector("input[name='contenido']").value = "";
+            form.querySelector("input[name='autor']").value = "";
         }
     }
 }
+
 document.addEventListener("DOMContentLoaded", () => {
     var n = new Noticias();
 });
-
-

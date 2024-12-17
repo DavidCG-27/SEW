@@ -41,7 +41,9 @@ class Pais {
                 let contador = 0;
                 let section = document.createElement("section");
                 $("body").append(section);
-
+                let h3 = document.createElement("h3");
+                h3.textContent = "Pronóstico del tiempo para la zona de la meta";
+                section.appendChild(h3);
                 for (let i = 0; i < $('forecast > time', datos).length; i++) { 
                     if(contador == 5){break;}
 

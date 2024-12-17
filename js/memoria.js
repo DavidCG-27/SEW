@@ -35,7 +35,7 @@ class Memoria {
             this.firstCard.removeAttribute('data-state');
             this.secondCard.removeAttribute('data-state');
             this.resetBoard();
-        }, 1500);
+        }, 750);
     }
 
     resetBoard() {
@@ -126,3 +126,4 @@ mem = new Memoria();
 mem.shuffleElements();
 mem.createElements();
 mem.addEventListeners();
+

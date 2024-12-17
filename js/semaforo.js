@@ -110,11 +110,11 @@ class Semaforo {
         form.appendChild(label);
 
         label = document.createElement("label");
-        label.setAttribute("name","tiempo");
         label.textContent="Tiempo: "
         input = document.createElement("input");
         input.value = `${tiempo/1000} segundos`;
         input.setAttribute("readonly","");
+        input.setAttribute("name","tiempo");
         label.appendChild(input);
         form.appendChild(label);
 

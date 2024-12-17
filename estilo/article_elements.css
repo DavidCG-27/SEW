@@ -3,9 +3,17 @@
 /* Especifidad 001 */
 section {
   display: flex;
-  justify-content: center; 
-  flex-wrap: wrap; 
-  padding: 2rem;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+/* Especifidad 002 */
+section h3{
+  flex-basis: 100%;
 }
 
 /* Especifidad 001 */

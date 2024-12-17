@@ -32,7 +32,7 @@ class Carrusel
         echo "<h3>Carrusel de fotos de " . $this->pais . "</h3>";
         for ($i = 0; $i < $perPage; $i++) {
             $titulo = $json->items[$i]->title;
-            $URLfoto = $json->items[$i]->media->m;
+            $URLfoto = str_replace("_m.jpg", "_b.jpg", $json->items[$i]->media->m);
             print "<img alt='" . $titulo . "' src='" . $URLfoto . "' />";
         }
         echo "<button> &gt; </button>";
@@ -51,7 +51,7 @@ class Moneda
         $this->local = $local;
     }
 
-    // Para realizar el cambio de moneda utilizaremos la API Fixer.io
+    // Para realizar el cambio de moneda utilizo la API Fixer.io
     function pintarCambio()
     {
         $accessKey = '3f9c55b40372275aa9ed4a111948f9de'; 
@@ -100,17 +100,17 @@ class Moneda
     <header>
         <h1><a href="index.html" title="Enlace a pagina de inicio">F1 Desktop</a></h1>
         <nav>
-            <a href="index.html" title="Pagina de Inicio ">Inicio</a>
+            <a href="index.html" title="Página de Inicio ">Inicio</a>
             <a href="piloto.html" title="Piloto ">Piloto</a>
-            <a href="noticias.html" title="Pagina de Noticias ">Noticias</a>
-            <a href="calendario.html" title="Pagina del Calendario ">Calendario</a>
-            <a href="meteorologia.html" title="Pagina de Meteorología ">Meteorología</a>
-            <a href="circuito.html" title="Pagina de los circuitos ">Circuito</a>
-            <a href="viajes.php" class="active" title="Pagina de Viajes ">Viajes</a>
-            <a href="juegos.html" title="Pagina de Juegos ">Juegos</a>
+            <a href="noticias.html" title="Página de Noticias ">Noticias</a>
+            <a href="calendario.html" title="Página del Calendario ">Calendario</a>
+            <a href="meteorologia.html" title="Página de Meteorología ">Meteorología</a>
+            <a href="circuito.html" title="Página de los circuitos ">Circuito</a>
+            <a href="viajes.php" class="active" title="Página de Viajes ">Viajes</a>
+            <a href="juegos.html" title="Página de Juegos ">Juegos</a>
         </nav>
     </header>
-    <p>Estás en: <a href="index.html" title="Pagina de Inicio">Inicio</a> >> Viajes</p>
+    <p>Estás en: <a href="index.html" title="Página de Inicio">Inicio</a> >> Viajes</p>
     <h2>Viajes</h2>
     <?php
     $carrusel = new Carrusel("Azerbaijan", "Baku");
@@ -125,8 +125,6 @@ class Moneda
         <input type="button" value="Obtener mapa estático" onClick="v.mostrarEstatico();" />
         <input type="button" value="Obtener mapa dinámico" onClick="v.mostrarDinamico();" />
     </main>
-    <section>
-    </section>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMh6tEOK0VSOlEHxxx4Ln_QsT3Lno0_0U&callback=v.getMapaDinamico"></script>
     <script async>v.eliminar()</script>
