@@ -1,0 +1,86 @@
+/* David Covián Gómez UO295168*/
+
+/* Especifidad 003 */
+main > section {
+    display: flex;                   
+    flex-wrap: wrap;
+    width: 70vw;            
+    justify-content: center;
+    gap: 0.5em;         
+}
+
+/* Especifidad 003 */
+main > section > h3 {
+    flex-basis: 100%;
+    text-align: center; 
+    margin: 0;          
+    font-size: 2em;                 
+}
+
+/* Especifidad 003 */
+main > section > article {
+    width: 20%;                    
+    height: 15em;                   
+    transform: scale(1);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    box-shadow: 0.1vw 0.1vw 0.1vw rgba(0, 0, 0, 0.3);
+}
+
+/* Especifidad 013 */
+main > section > article[data-state="flip"] {
+    transform: rotateY(180deg);
+}
+
+/* Especifidad 013 */
+main > section > article[data-state="revealed"] {
+    transform: rotateY(180deg);
+}
+
+
+/* Especifidad 004 */
+main > section > article > img {
+    transform: rotateY(180deg);
+}
+
+/* Especifidad 004 y 004 */
+main > section > article > h3,
+main > section > article > img {
+    margin: 0;
+    width: 100%; 
+    height: 100%; 
+    position: absolute;
+    border-radius: 0.5rem; 
+    background: #1e9698;
+    backface-visibility: hidden;
+    font-size: 1em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000000;
+}
+
+
+
+/* Especifidad 004 */
+main > section > article > h3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Especifidad 002 */
+button+p {
+    font-size: 1.125rem; 
+    line-height: 1.6;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1em; 
+    border-radius: 0.5em; 
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
+    max-width: 60ch; 
+    margin: 1em auto;
+}
+
+
+

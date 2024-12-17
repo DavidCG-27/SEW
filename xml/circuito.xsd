@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.uniovi.es"
+	xmlns="http://www.uniovi.es"
+	elementFormDefault="qualified">	<xs:element name="circuito">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="nombre" />
+				<xs:element ref="longitud" />
+				<xs:element ref="anchura" />
+				<xs:element ref="fecha" />
+				<xs:element ref="hora" />
+				<xs:element ref="vueltas" />
+				<xs:element ref="localidad" />
+				<xs:element ref="pais" />
+				<xs:element ref="coordenadas" />
+				<xs:element ref="galeriaFotos" />
+				<xs:element ref="galeriaVideos" />
+				<xs:element ref="referencias" />
+				<xs:element ref="tramos" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="nombre" type="xs:string" />
+	<xs:element name="longitud" type="xs:string" />
+	<xs:element name="anchura" type="xs:double" />
+	<xs:element name="fecha" type="xs:date" />
+	<xs:element name="hora" type="xs:time" />
+	<xs:element name="vueltas" type="xs:integer" />
+	<xs:element name="localidad" type="xs:string" />
+	<xs:element name="pais" type="xs:string" />
+	<xs:element name="coordenadas">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="longitudCoordenadas">
+					<xs:simpleType>
+						<xs:restriction base="xs:double">
+							<xs:minInclusive value ="-180"/>
+							<xs:maxInclusive value ="180"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="latitudCoordenadas">
+					<xs:simpleType>
+						<xs:restriction base="xs:double">
+							<xs:minInclusive value ="-90"/>
+							<xs:maxInclusive value ="90"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="altitudCoordenadas">
+					<xs:simpleType>
+						<xs:restriction base="xs:double">
+							<xs:minInclusive value ="-500"/>
+							<xs:maxInclusive value ="8848"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="galeriaFotos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="5" ref="foto" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="foto">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="nombre" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="galeriaVideos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="3" ref="video" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="video">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="nombre" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="referencias">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="3" maxOccurs="unbounded" ref="enlace" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="enlace">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="url" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tramos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="tramo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tramo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="distancia" />
+				<xs:element ref="unidades" />
+				<xs:element ref="sector" />
+				<xs:element ref="latitudTramo" />
+				<xs:element ref="longitudTramos" />
+				<xs:element ref="altitudTramo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="distancia">
+		<xs:simpleType>
+			<xs:restriction base="xs:double">
+				<xs:minExclusive value ="0"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="unidades" type="xs:string" />
+	<xs:element name="sector">
+		<xs:simpleType>
+			<xs:restriction base="xs:double">
+				<xs:minInclusive value ="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="latitudTramo">
+		<xs:simpleType>
+			<xs:restriction base="xs:double">
+				<xs:minInclusive value ="-90"/>
+				<xs:maxInclusive value ="90"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="longitudTramos">
+		<xs:simpleType>
+			<xs:restriction base="xs:double">
+				<xs:minInclusive value ="-180"/>
+				<xs:maxInclusive value ="180"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="altitudTramo">
+		<xs:simpleType>
+			<xs:restriction base="xs:double">
+				<xs:minInclusive value ="-500"/>
+				<xs:maxInclusive value ="8848"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	
+</xs:schema>

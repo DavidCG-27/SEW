@@ -1,0 +1,209 @@
+/* David Covián Gómez UO295168*/
+
+/* Especifidad 001 */
+body {
+    width: 100%;
+    height: 100%;
+    margin: 3em;
+}
+
+/* Especifidad 001 */
+main {
+    width: 60%;
+    height: 50%;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3% 3%;
+    align-items: center;
+}
+
+/* Especifidad 002 */
+main>h3 {
+    font-size: 2em;
+    grid-column: 1 / -1;
+    text-align: center;
+    border-left: none;  
+    color: black; /* WARNING DE HERENCIA: Background-color es heredado */
+}
+
+/* Especifidad 002 */
+main>p{
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+/* Especifidad 002 */
+main>div {
+    background-color: #000A; /* WARNING DE HERENCIA: Color es heredado */
+    border: 0.5vw solid black;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+/* Especifidad 012 */
+main>button:first-of-type {
+    grid-column: 2 / span 1;
+}
+
+/* Especifidad 012 */
+main>button:nth-of-type(2) {
+    grid-column: 3 / span 1;
+}
+
+/* Especifidad 022 */
+main.load div:first-of-type {
+    animation-name: backgrounds;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+/* Especifidad 022 */
+main.load div:nth-of-type(2) {
+    animation-name: backgrounds;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+/* Especifidad 022 */
+main.load div:nth-of-type(3) {
+    animation-name: backgrounds;
+    animation-duration: 0.5s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Especifidad 022 */
+main.load div:nth-of-type(4) {
+    animation-name: backgrounds;
+    animation-duration: 0.5s;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+/* Especifidad 012 */
+main.unload div {
+    animation-name: out;
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes out {
+    from {
+        background-color: red; /* WARNING DE MEDIAQUERIE: Redefinición de bakcground-color */
+    }
+
+    to {
+        background-color: #000A;
+    }
+}
+
+@keyframes backgrounds {
+    from {
+        background-color: #000A; /* WARNING DE MEDIAQUERIE: Redefinición de bakcground-color || WARNING DE HERENCIA: Color es heredado */
+    }
+
+    to {
+        background-color: red; /* WARNING DE MEDIAQUERIE: Redefinición de bakcground-color || WARNING DE HERENCIA: Color es heredado */
+    }
+}
+
+
+
+/* Especifidad 002 */
+body > nav {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Especifidad 003 */
+body > nav > a {
+    margin-bottom: 0.35em;
+    text-decoration: none;
+    color: #000; /* WARNING DE HERENCIA: Background-color es heredado */
+}
+
+/* Especifidad 001 */
+form {
+    grid-column: 1 / -1;
+    gap: 1em;
+    padding: 2em;
+    border-radius: 0.7em;
+    background-color: #98D7C2; /* WARNING DE HERENCIA: Color es heredado */
+    box-shadow: 0 0.3em 0.5em rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin: 1em auto;
+}
+
+/* Especifidad 002 */
+form label {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333; /* WARNING DE HERENCIA: Background-color es heredado */
+    margin-bottom: 0.5em;
+}
+
+/* Especifidad 002 */
+form input {
+    padding: 0.8em;
+    border: 0.3em solid #ccc;
+    border-radius: 0.5em;
+    font-size: 1em;
+    color: #555; /* WARNING DE HERENCIA: Background-color es heredado */
+    transition: border-color 0.3s ease;
+}
+
+/* Especifidad 012 */
+form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Especifidad 002 */
+form p {
+    font-size: 1.1em;
+    color: #555; /* WARNING DE HERENCIA: Background-color es heredado */
+    margin: 0.5em 0;
+}
+
+/* Especifidad 002 */
+form > label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+/* Especifidad 011 */
+form:empty {
+    display: none;
+}
+
+section {
+    grid-column: 1 / -1;
+
+}
+
+/* Especifidad 003 */
+section > h2 + ol {
+    grid-column: 1 / -1;
+    font-family: "Trebuchet MS", "Arial", sans-serif;
+    color: #000000; 
+    background-color: #98D7C2; 
+    border: 0.1em solid #ddd;
+    padding: 1em;
+    margin: 1.5em auto;
+    border-radius: 0.5em;
+    list-style-position: inside;
+}
+
+/* Especifidad 003 */
+section > h2 + ol > li {
+    font-size: 1.1em;
+    margin: 0.5em 0;
+    padding: 0.3em 0.5em; 
+    background-color: #DDFFE7; /* WARNING DE HERENCIA: Color es heredado */
+    border-left: 0.3em solid #126263; 
+    border-radius: 0.25em;
+}

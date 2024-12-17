@@ -1,0 +1,47 @@
+/* David Covián Gómez UO295168*/
+
+/* Especifidad 001 */
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Especifidad 001 */
+nav {
+    order: 5;
+    align-self: center;
+}
+
+/* Especifidad 001 */
+h1 {
+    order: 1;
+    align-self: flex-start;
+}
+
+@media (max-width: 1105px) {
+
+    /* Especifidad 001 */
+    header {
+        display: flex; /* WARNING DE MEDIAQUERIE: Redefinición de display */
+        flex-direction: column;
+        justify-content: center; /* WARNING DE MEDIAQUERIE: Redefinición de justify-content */
+    }
+
+    /* Especifidad 001 */
+    nav {
+        display: flex;  
+        flex-direction: column;
+        align-self: center; /* WARNING DE MEDIAQUERIE: Redefinición de asign-self */
+    }
+
+    /* Especifidad 002 */
+    nav > a {
+        align-self: center;
+        margin-bottom: 0.75em;
+    }
+
+    /* Especifidad 001 */
+    h1 {
+        align-self: center; /* WARNING DE MEDIAQUERIE: Redefinición de asign-self */
+    }
+}

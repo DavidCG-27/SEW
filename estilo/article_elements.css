@@ -1,0 +1,44 @@
+/* David Covián Gómez UO295168*/
+
+/* Especifidad 001 */
+section {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap; 
+  padding: 2rem;
+}
+
+/* Especifidad 001 */
+article {
+  width: 25%; 
+  height: 20%;
+  background-color: #126263; /* WARNING DE HERENCIA: Color es heredado */
+  border-radius: 1rem; 
+  border: 0.1rem solid #126263;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  padding: 2rem; 
+  margin: 0.5em;
+  text-align: center; 
+}
+
+/* Especifidad 002 */
+article h3 {
+  font-size: 1.6rem; 
+  color: #ffffff; /* WARNING DE HERENCIA: Background-color es heredado */
+  margin-bottom: 1.5rem; 
+}
+/* Especifidad 002 */
+article img {
+  width: 50%; 
+  height: auto; 
+  border-radius: 0.8rem; 
+  margin-bottom: 1rem; 
+}
+/* Especifidad 002 */
+article p {
+  font-size: 1rem; 
+  color: #ffffff; /* WARNING DE HERENCIA: Background-color es heredado */
+}
