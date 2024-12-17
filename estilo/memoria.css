@@ -31,7 +31,7 @@ main > section > h3 {
     margin: 0;          
     font-size: 2em;
     justify-content: center;       
-    border-left: none;          
+    border-left: none;
 }
 
 /* Especifidad 003 */
@@ -73,7 +73,7 @@ main > section > article > img {
     backface-visibility: hidden;
     font-size: 1em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #000000;
+    color: white;
 }
 
 /* Especifidad 004 */
