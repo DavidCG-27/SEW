@@ -16,7 +16,7 @@ class Carrusel
         $tag = $this->pais;
         $perPage = 10;
 
-        $url = 'http://api.flickr.com/services/feeds/photos_public.gne?';
+        $url = 'https://api.flickr.com/services/feeds/photos_public.gne?';
         $url .= '&api_key=' . $api_key;
         $url .= '&tags=' . $tag;
         $url .= '&per_page=' . $perPage;
@@ -56,7 +56,7 @@ class Moneda
     {
         $accessKey = '3f9c55b40372275aa9ed4a111948f9de'; 
 
-        $url = "http://data.fixer.io/api/latest?access_key=".$accessKey."&base=".$this->local."&symbols=".$this->cambio;
+        $url = "https://data.fixer.io/api/latest?access_key=".$accessKey."&base=".$this->local."&symbols=".$this->cambio;
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);

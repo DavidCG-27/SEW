@@ -74,7 +74,7 @@ class Noticias {
     }
 
     getImagenParaNoticia(funcion) {
-        var flickrAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+        var flickrAPI = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
         $.getJSON(flickrAPI, {
             tags: "F1 2024",
             tagmode: "all",
