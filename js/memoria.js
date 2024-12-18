@@ -77,6 +77,20 @@ class Memoria {
         }
     }
 
+    reiniciar(){
+        this.resetBoard();
+        let cards = document.querySelectorAll("main > section > article");
+        cards.forEach(card => card.removeAttribute('data-state'));
+        this.shuffleElements();
+        let section = document.querySelector('section');
+        if(section)
+            section.innerHTML = "<h3>Juego de Memoria</h3>";
+        this.createElements();
+        let aside = document.querySelector("body > aside");
+        aside.innerHTML = "";
+        this.addEventListeners();
+    }
+
     addEventListeners() {
         let section = document.querySelector("section");
         let cards = section.querySelectorAll("article");
@@ -84,12 +98,23 @@ class Memoria {
         cards.forEach(card => {
             card.addEventListener("click", this.flipCard.bind(this, card));
         });
-
+        let aside = document.querySelector("aside");
+        if(!aside)
+            aside = document.createElement("aside");
+        let h4 = document.createElement("h4");
+        h4.textContent = "Sección de herramientas";
         let button = document.createElement("button");
         button.textContent = 'Ayuda';
         button.addEventListener("click", this.showAyuda.bind(this));
         let body = document.querySelector("body");
-        body.appendChild(button);
+        aside.appendChild(h4);
+        aside.appendChild(button);
+        body.appendChild(aside);
+
+        let reiniciar = document.createElement("button");
+        reiniciar.textContent = 'Reiniciar';
+        reiniciar.addEventListener("click", this.reiniciar.bind(this));
+        aside.appendChild(reiniciar);
     }
 
     flipCard(card) {
@@ -111,7 +136,7 @@ class Memoria {
     }
 
     showAyuda(){
-        let p = document.querySelector("button+p");
+        let p = document.querySelector("aside+p");
         if(p)
             p.remove();
         else{

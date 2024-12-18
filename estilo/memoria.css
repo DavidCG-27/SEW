@@ -6,10 +6,10 @@ main {
     display: flex;
 }
 
-/* Especifidad 002 */
-main+button {
+/* Especifidad 001 */
+button {
     color: black;
-    background: #1e9698;
+    background: #25AEB1;
     border-radius: 0.5rem;
     padding: 0.5rem;
     margin:0.5em;
@@ -69,11 +69,11 @@ main > section > article > img {
     height: 100%; 
     position: absolute;
     border-radius: 0.5rem; 
-    background: #1e9698;
+    background: #25AEB1;
     backface-visibility: hidden;
     font-size: 1em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white;
+    color: black;
 }
 
 /* Especifidad 004 */
@@ -126,7 +126,7 @@ main > section > article > h3 {
 }
 
 /* Especifidad 002 */
-button+p {
+aside+p {
     font-size: 1.125rem; 
     line-height: 1.6;
     color: black;
@@ -138,3 +138,11 @@ button+p {
     margin: 1em auto;
 }
 
+/* Especifidad 001 */
+aside{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    flex-direction: column;
+}
