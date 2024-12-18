@@ -18,7 +18,7 @@ h1 {
     align-self: flex-start;
 }
 
-@media (max-width: 1105px) {
+@media (max-width: 1152px) {
 
     /* Especifidad 001 */
     header {

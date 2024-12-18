@@ -132,7 +132,20 @@ class Memoria {
             this.secondCard=card;
             this.checkForMatch();
         }
+        this.comprobarFinal();
+    }
 
+    comprobarFinal(){
+        let cards = document.querySelectorAll("main > section > article");
+        let contador = 0;
+        cards.forEach(card => {
+            if(card.getAttribute('data-state')=='revealed')
+                contador++;
+        });
+        if(contador==cards.length){
+            let h3 = document.querySelector("body > main > section > h3")
+            h3.textContent = "¡FELICIDADES! Has finalizado el juego con éxito"
+        }
     }
 
     showAyuda(){
